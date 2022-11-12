@@ -1,0 +1,88 @@
+:root {
+  --h2-text-color: #A4C7C6;
+  --bg: rgba(255, 255, 255, 0.07);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chart {
+  padding: var(--standard-padding);
+  z-index: -1;
+}
+.chart section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.chart section > img {
+  width: 100%;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+.chart section h2 {
+  color: var(--h2-text-color);
+}
+.chart section aside > p {
+  color: var(--nav-text);
+  line-height: 1.4rem;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.chart section aside aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.chart section aside aside div {
+  padding: 10px;
+  background: var(--bg);
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--nav-text);
+  margin: 20px 0 30px;
+  cursor: pointer;
+}
+.chart section aside aside div svg {
+  margin: 0 10px 0 0;
+}
+.chart .songs aside {
+  background: var(--bg);
+  width: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--standard-padding) / 2);
+  margin: calc(var(--standard-padding) / 2) 0;
+  cursor: pointer;
+}
+.chart .songs aside > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  color: var(--nav-text);
+}
+.chart .songs aside > div .img {
+  width: 60px;
+  margin: 0 10px 0 0;
+  border-radius: 10px;
+}
+.chart .songs aside > div h3 {
+  font-size: 16px;
+}
+.chart .songs aside .duration {
+  align-items: flex-end;
+  flex-direction: column;
+}
+.chart .songs aside p {
+  font-size: 15px;
+  margin: 10px 0 0;
+}/*# sourceMappingURL=chart.css.map */

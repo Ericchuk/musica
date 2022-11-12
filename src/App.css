@@ -1,0 +1,599 @@
+@import url("https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&family=League+Spartan:wght@500;700&family=Overpass:ital,wght@0,400;0,700;1,400&family=Poppins:wght@400;700;800&family=Quicksand:wght@400;500;700&display=swap");
+:root {
+  --main-background: #1E1E1E;
+  --nav-background: #1E1E1E;
+  --nav-text: #EFEEE0;
+  --standard-padding: 20px;
+  --section: #609EAF;
+  --top-chart-bg: #1f2425;
+  --play-btn-bg: #FACD66;
+  --footer-bg: linear-gradient(0deg, rgba(29, 33, 35, 0.3), rgba(29, 33, 35, 0.3)),
+      linear-gradient(0deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+}
+
+* {
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background: var(--main-background);
+}
+
+h2 {
+  color: var(--nav-text);
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+header aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header aside svg {
+  margin: 0 0 0 20px;
+}
+header .search-container {
+  position: relative;
+}
+header .search-container input {
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 10px;
+  width: 100%;
+  background: transparent;
+  color: var(--nav-text);
+  outline: none;
+}
+header .search-container .search-container-in svg {
+  position: absolute;
+  top: 5px;
+  right: 12px;
+}
+
+.toggleMenu {
+  display: block;
+  position: relative;
+  z-index: 4;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.toggleMenu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 5;
+}
+.toggleMenu span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  position: relative;
+  background-color: white;
+  border-radius: 2px;
+  z-index: 4;
+  transform-origin: 4px 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+.toggleMenu span.first-child {
+  margin-bottom: 6px;
+  transform-origin: 0% 0%;
+}
+.toggleMenu span:last-child {
+  transform-origin: 0% 100%;
+}
+.toggleMenu input:checked ~ span {
+  opacity: 1;
+  transform: rotate(-45deg) translate(-2px, 1px);
+}
+.toggleMenu input:checked ~ span:nth-last-child(2) {
+  transform: rotate(45deg) translate(-2px, -2px);
+}
+.toggleMenu .callNav {
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transform: none;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--nav-background);
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px var(--standard-padding);
+  z-index: 1;
+  -webkit-animation: slideIn 1s ease;
+          animation: slideIn 1s ease;
+}
+nav a {
+  list-style-type: none;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+nav a svg {
+  margin: 0 20px;
+}
+nav .home {
+  color: var(--nav-text);
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translate(-100%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+.container-Box {
+  padding: 20px;
+}
+.container-Box .container {
+  background-image: url(./components/images/vector.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-color: var(--section);
+  color: var(--nav-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 70vh;
+  padding: 20px;
+  border-radius: 10px;
+  -webkit-animation: bgChange 5s infinite cubic-bezier(1, 1, 1, 1);
+          animation: bgChange 5s infinite cubic-bezier(1, 1, 1, 1);
+}
+.container-Box .container > div > img {
+  display: none;
+}
+.container-Box .container > div .currated {
+  margin: 0 0 200px;
+}
+.container-Box .container p {
+  font-size: 17px;
+}
+.container-Box .container aside h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.container-Box .container aside p {
+  line-height: 1.6rem;
+  font-size: 16.5px;
+  margin: 10px 0;
+}
+.container-Box .container .likes {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-Box .container .likes div {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.container-Box .container .likes div .love {
+  margin: 0 10px 0 0;
+}
+.container-Box .container .likes div p {
+  font-size: 25px;
+}
+.container-Box .container .likes .avatarBox {
+  width: 50%;
+  height: 50px;
+}
+.container-Box .container .likes .avatarBox div {
+  width: 100%;
+  height: 100%;
+}
+.container-Box .container .likes .avatarBox img {
+  position: absolute;
+  left: 0;
+}
+.container-Box .container .likes .avatarBox :nth-child(2) {
+  left: 20px;
+}
+.container-Box .container .likes .avatarBox :nth-child(3) {
+  left: 40px;
+}
+.container-Box .container .likes .avatarBox :nth-child(4) {
+  left: 60px;
+}
+.container-Box .container .likes .avatarBox :nth-child(5) {
+  left: 80px;
+}
+
+.topChart {
+  margin: 40px 0 20px;
+  padding: 0 0 0 var(--standard-padding);
+}
+.topChart > aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  margin: 0 0 0 20px;
+  position: relative;
+  overflow-x: scroll;
+}
+.topChart > aside > div {
+  background-color: var(--top-chart-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  top: 0px;
+  width: 100%;
+  margin: 0 15px 0 0;
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--nav-text);
+}
+.topChart > aside > div .first {
+  width: 100%;
+  margin-right: 60px;
+}
+.topChart > aside > div .first img {
+  margin-right: 60px;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+}
+.topChart > aside > div .first h4 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: 400;
+}
+.topChart > aside > div .first .artist {
+  margin: 0 0 10px;
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+.topChart > aside > div .favourite {
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}
+
+.release {
+  padding: var(--standard-padding) 0 var(--standard-padding) var(--standard-padding);
+}
+.release aside {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+.release aside div {
+  margin: 10px 10px;
+}
+.release aside img {
+  border-radius: 10px;
+}
+.release aside p {
+  font-size: 15px;
+  color: var(--nav-text);
+  margin-top: 5px;
+}
+
+.popular {
+  padding-bottom: 100px;
+}
+
+.logSection {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--footer-bg);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  z-index: 99;
+}
+.logSection aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+.logSection aside > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logSection aside > div img {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  margin: 0 10px 0 0;
+}
+.logSection aside > div h4 {
+  color: var(--nav-text);
+}
+.logSection aside > div p {
+  color: var(--nav-text);
+}
+.logSection aside > div .play-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 100px;
+  margin: 0 15px 0 0;
+  background-color: var(--play-btn-bg);
+}
+.logSection aside #shuffle,
+.logSection aside #prev,
+.logSection aside #repeat,
+.logSection aside .progress-bar,
+.logSection aside .volume-bar {
+  display: none;
+}
+
+@media screen and (min-width: 1000px) {
+  * {
+    overflow-x: hidden;
+  }
+  header {
+    justify-content: flex-start;
+  }
+  header aside svg {
+    margin: 0;
+  }
+  header .toggleMenu {
+    display: none;
+  }
+  header .search-container {
+    margin: 0 0 0 30px;
+  }
+  header .search-container input {
+    width: 200%;
+    border: none;
+    padding-left: 40px;
+    background: var(--top-chart-bg);
+  }
+  header .search-container svg {
+    right: auto;
+    left: 10px;
+    width: 20px;
+  }
+  nav {
+    width: 75px;
+    top: 75px;
+    height: 80vh;
+    padding: 0 0 0px;
+  }
+  nav ul {
+    margin: 0px 0px 10px 10px;
+    background: var(--top-chart-bg);
+    border-radius: 40px;
+  }
+  nav a {
+    position: relative;
+    margin: 10px 0;
+    padding: 10px 0;
+  }
+  nav a svg {
+    width: 100%;
+  }
+  nav a span {
+    display: none;
+  }
+  .container-Box {
+    margin: 0 0 0 65px;
+    padding-top: 0;
+  }
+  .container-Box .container {
+    width: 73%;
+    height: 75vh;
+    background-image: url(./components/images/desktopVector.svg);
+    background-size: 90%;
+    -webkit-animation: bgChange 5s infinite cubic-bezier(1, 1, 1, 1);
+            animation: bgChange 5s infinite cubic-bezier(1, 1, 1, 1);
+    padding: 0 20px;
+  }
+  .container-Box .container > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+  .container-Box .container > div > img {
+    width: 50%;
+    display: block;
+  }
+  .container-Box .container .currated {
+    margin: 0 0 150px;
+  }
+  .container-Box .container aside {
+    width: 400px;
+  }
+  .container-Box .container aside .para {
+    width: 300px;
+  }
+  .container-Box .container :nth-child(2) aside {
+    margin: 70px 0 0;
+  }
+  .container-Box .container .likes {
+    margin: 10px 0 0;
+  }
+  .container-Box .container .likes p {
+    overflow: hidden;
+  }
+  .topChart {
+    position: absolute;
+    right: -18%;
+    top: 18px;
+    width: 45%;
+  }
+  .topChart > aside {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .topChart > aside > div {
+    margin: 0px 0 10px;
+  }
+  .topChart > aside > div .first {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .topChart > aside > div .first img {
+    margin: 0px 10px 0 0;
+  }
+  .topChart > aside > div .first h4 {
+    margin: 0 0 5px;
+  }
+  .topChart > aside > div .first .artist {
+    margin: 5px 0 0;
+  }
+  .release h2 {
+    padding-left: 40px;
+  }
+  .release aside {
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .logSection > aside > aside {
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+    align-items: center;
+    flex-direction: column;
+    width: 60%;
+    margin: 0 10px;
+    position: relative;
+  }
+  .logSection > aside > aside > div .play-box {
+    margin: 10px;
+  }
+  .logSection > aside > aside > div #shuffle,
+.logSection > aside > aside > div #prev,
+.logSection > aside > aside > div #repeat,
+.logSection > aside > aside > div #next {
+    margin: 10px;
+  }
+  .logSection > aside > div {
+    display: flex;
+    border: 2px solid red;
+    justify-content: center;
+    align-items: center;
+  }
+  .logSection > aside #shuffle,
+.logSection > aside #prev,
+.logSection > aside #repeat,
+.logSection > aside .progress-bar,
+.logSection > aside .volume-bar {
+    display: flex;
+  }
+  .logSection > aside .progress-bar {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .logSection > aside .progress-bar > span {
+    border: 2px solid red;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logSection > aside .progress-bar > span > span {
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    background: white;
+  }
+  .logSection > aside .progress-bar progress[value] {
+    --webkit-appearance: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 20px;
+  }
+  .logSection > aside .progress-bar progress[value]::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 20px;
+  }
+  .logSection > aside .progress-bar progress[value]::-webkit-progress-value {
+    background-color: yellow;
+  }
+  .logSection > aside .progress-bar progress[value]::-webkit-progress-value::before {
+    content: "80%";
+    position: absolute;
+    right: 0;
+    top: -125%;
+  }
+}
+@-webkit-keyframes bgChange {
+  0% {
+    background-size: 90%;
+  }
+  50% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 90%;
+  }
+}
+@keyframes bgChange {
+  0% {
+    background-size: 90%;
+  }
+  50% {
+    background-size: 100%;
+  }
+  100% {
+    background-size: 90%;
+  }
+}/*# sourceMappingURL=App.css.map */
