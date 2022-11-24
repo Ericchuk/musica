@@ -1,11 +1,11 @@
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 export default function SideBar() {
   return (
     <nav>
       <ul>
-        <Link to="/">
+        <NavLink to="/">
         {/* Home icon  */}
         <svg
           width="18"
@@ -21,8 +21,8 @@ export default function SideBar() {
         </svg>
 
         <span className="home">Home</span>
-      </Link>
-      <Link to="/collection">
+      </NavLink>
+      <NavLink to="/collection">
         {/* collections icon  */}
         <svg
           width="29"
@@ -31,7 +31,7 @@ export default function SideBar() {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g id="playLinkst">
+          <g id="playlist">
             <g id="vuesax/bold/music-library-2">
               <g id="music-library-2">
                 <path
@@ -63,8 +63,8 @@ export default function SideBar() {
           </g>
         </svg>
         <span>My collections</span>
-      </Link>
-      <Link>
+      </NavLink>
+      <NavLink>
         {/* radio icon  */}
         <svg
           width="29"
@@ -93,8 +93,8 @@ export default function SideBar() {
           </g>
         </svg>
         <span>Radio</span>
-      </Link>
-      <Link>
+      </NavLink>
+      <NavLink>
         {/* music video icon  */}
         <svg
           width="29"
@@ -172,12 +172,12 @@ export default function SideBar() {
         </svg>
 
         <span>Music videos</span>
-      </Link>
+      </NavLink>
       </ul>
       
 
       <ul>
-        <Link>
+        <NavLink>
         {/* profile icon  */}
         <svg
           width="29"
@@ -205,8 +205,8 @@ export default function SideBar() {
         </svg>
 
         <span>Profile</span>
-      </Link>
-      <Link>
+      </NavLink>
+      <NavLink>
         {/* log out icon  */}
         <svg
           width="29"
@@ -229,7 +229,7 @@ export default function SideBar() {
         </svg>
 
         <span>Log out</span>
-      </Link>
+      </NavLink>
       </ul>
 
       
